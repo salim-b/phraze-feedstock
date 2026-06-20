@@ -49,8 +49,10 @@ requirements:
 
 tests:
   - script:
-      - phraze --help
-      - phraze --version
+      - if: build_platform == host_platform
+        then:
+          - phraze --help
+          - phraze --version
   - package_contents:
       bin:
         - phraze
